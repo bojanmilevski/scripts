@@ -1,9 +1,6 @@
 #!/bin/sh
 
-# just-delete-me
-
-cargo r -- -b "librewolf" \
-	-i "clearurls" \
+cargo r i "clearurls" \
 	"cookie-autodelete" \
 	"darkreader" \
 	"decentraleyes" \
@@ -21,4 +18,5 @@ cargo r -- -b "librewolf" \
 	"ublock-origin" \
 	"vimium-ff" \
 	"volume-control-boost-volume" \
-	"youtube-nonstop"
+	"youtube-nonstop" \
+	-b "librewolf"

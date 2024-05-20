@@ -17,24 +17,25 @@ error() {
 [ ! -e "$1" ] && error "$1 does not exist."
 
 DISK="$1"
-WIFI_DEV="$2"
-WIFI_SSID="$3"
-WIFI_PASS="$4"
-HOSTNAME="$5"
-USER_NAME="$6"
+HOSTNAME="$2"
+USER_NAME="$3"
+TIMEZONE="$4"
+#WIFI_DEV=""
+#WIFI_SSID=""
+#WIFI_PASS=""
 
 # write random data to disk
 dd if="/dev/urandom" of="${DISK}" status="progress"
 
 # wifi
-rfkill unblock all
-ip link set up "${WIFI_DEV}" #ipconfig
-wpa_passphrase "${WIFI_SSID}" "${WIFI_PASS}" >"/tmp/wpa.conf"
-wpa_supplicant -Bi "${WIFI_DEV}" -c "/tmp/wpa.conf"
-rm "/tmp/wpa.conf"
-dhcpd
-ping gnu.org
-sleep 3s
+# rfkill unblock all
+# ip link set up "${WIFI_DEV}" #ipconfig
+# wpa_passphrase "${WIFI_SSID}" "${WIFI_PASS}" >"/tmp/wpa.conf"
+# wpa_supplicant -Bi "${WIFI_DEV}" -c "/tmp/wpa.conf"
+# rm "/tmp/wpa.conf"
+# dhcpd
+# ping gnu.org
+# sleep 3s
 
 # partitioning
 parted -s "$DISK" mklabel "gpt"                                  # gpt
@@ -54,7 +55,7 @@ mount "/dev/mapper/root" "/mnt"
 mount --mkdir=0755 "${DISK}1" "/mnt/boot"
 
 # installing system
-basestrap "/mnt" base base-devel openrc elogind elogind-openrc linux linux-firmware lvm2 lvm2-openrc cryptsetup grub efibootmgr os-prober connman connman-openrc wpa_supplicant neovim
+basestrap "/mnt" base base-devel openrc elogind elogind-openrc linux linux-firmware lvm2 lvm2-openrc cryptsetup grub efibootmgr os-prober networkmanager networkmanager-openrc neovim
 
 # fstab
 fstabgen -U "/mnt" >"/mnt/etc/fstab"
@@ -76,7 +77,7 @@ echo "::1 localhost" >>"/etc/hosts"
 echo "127.0.1.1 ${HOSTNAME}.localdomain ${HOSTNAME}" >>"/etc/hosts"
 
 # time
-ln -sf "/usr/share/zoneinfo/Europe/Skopje" "/etc/localtime"
+ln -sf "/usr/share/zoneinfo/${TIMEZONE}" "/etc/localtime"
 hwclock --systohc
 
 # locale
@@ -94,8 +95,5 @@ useradd -m "${USER_NAME}"
 passwd "root"
 passwd "${USER_NAME}"
 
-# auto login
-# sed -i "s/-J/--autologin ${USER_NAME} --noclear/" "/etc/conf.d/agetty.tty1"
-
 # services
-rc-update add connmand default
+rc-update add NetworkManager default
