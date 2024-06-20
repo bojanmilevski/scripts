@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cargo r i "clearurls" \
+gex i "clearurls" \
 	"cookie-autodelete" \
 	"darkreader" \
 	"decentraleyes" \

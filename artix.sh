@@ -61,13 +61,22 @@ basestrap "/mnt" base base-devel openrc elogind elogind-openrc linux linux-firmw
 fstabgen -U "/mnt" >"/mnt/etc/fstab"
 
 # chroot
-artix-chroot "/mnt"
+# or you can do
+# artix-chroot "/mnt"
+# instead of all this
+mount --types "proc" "/proc" "/mnt/proc"
+mount --rbind "/sys" "/mnt/sys"
+mount --make-rslave "/mnt/sys"
+mount --rbind "/dev" "/mnt/dev"
+mount --make-rslave "/mnt/dev"
+mount --bind "/run" "/mnt/run"
+mount --make-slave "/mnt/run"
+chroot "/mnt"
 
 # decryption
 sed -i "s/block filesystems/block encrypt lvm2 filesystems/" "/etc/mkinitcpio.conf"
 UUID="$(blkid -s UUID -o value ${DISK}2)"
-sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=*/GRUB_CMDLINE_LINUX_DEFAULT=\"cryptdevice=UUID=${UUID}:root root=/dev/mapper/root quiet splash iomem=relaxed\"/" "/etc/default/grub"
-mkinitcpio -p "linux"
+sed -i "s/GRUB_CMDLINE_LINUX_DEFAULT=*/GRUB_CMDLINE_LINUX_DEFAULT=\"cryptdevice=UUID=${UUID}:root root=\/dev\/mapper\/root\"/" "/etc/default/grub"
 
 # computer info
 echo "${HOSTNAME}" >"/etc/hostname"
@@ -85,6 +94,7 @@ echo "en_US.UTF-8 UTF-8" >"/etc/locale.gen"
 locale-gen
 
 # bootloader
+mkinitcpio -p "linux" # because we need to enable lvm support
 grub-install --target "x86_64-efi" --efi-directory "/boot" --bootloader-id "grub"
 grub-mkconfig -o "/boot/grub/grub.cfg"
 
