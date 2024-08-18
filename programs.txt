@@ -1,14 +1,22 @@
+# audio
+scarlett2
+
 # artix
 artix-archlinux-support
 base
 downgrade
 paru
 
-# boot
+# bootloader
 artix-grub-theme
 efibootmgr
 grub
 os-prober
+
+# shell
+dash
+dashbinsh
+fish
 
 # cli
 android-tools
@@ -20,8 +28,6 @@ btrfs-progs
 cronie
 cronie-openrc
 cryptsetup
-dash
-dashbinsh
 dos2unix
 duf
 dust
@@ -29,7 +35,6 @@ elogind
 elogind-openrc
 fastfetch
 fd
-fish
 git
 glow
 jq
@@ -48,18 +53,13 @@ networkmanager-openrc
 ntfs-3g
 opendoas
 openrc
-pass
-pass-otp
-pass-update
-passff-host
-passff-host-librewolf-git
 pipewire-autostart
 pipewire-pulse
+playerctl
 procs
 progress
 qemu-base
 ripgrep
-syslog-ng
 tldr
 topgrade
 trashy
@@ -75,15 +75,16 @@ zbar
 zip
 zoxide
 
-# de
-ark
-dolphin
-gwenview
-kcalc
-plasma
-skanlite
-wl-clipboard
-xdg-desktop-portal
+# compilers/interpreters
+clang
+npm
+python
+rust
+texlive-basic
+typescript
+
+# debuggers
+gdb
 
 # fonts
 nerd-fonts
@@ -91,22 +92,72 @@ ttf-apple-emoji
 ttf-liberation
 ttf-macedonian-ancient
 ttf-macedonian-church
-ttf-material-design-icons-git
+ttf-material-design-icons
+
+# formatters
+checkmake
+codespell
+prettier
+ruff
+shfmt
+stylua
 
 # gui
+alsa-scarlett-gui
 apple_cursor
-discord
 gimp
 kdenlive
 kitty
 libreoffice-fresh
-librewolf-bin
+librewolf
 mpv
 nextcloud-client
 obs-studio
 qbittorrent
 spotify
 thunderbird
+
+# kde
+ark
+dolphin
+gwenview
+kcalc
+ksshaskpass
+kwalletmanager
+plasma
+skanlite
+xdg-desktop-portal
+
+# lsp
+bash-language-server
+cmake-language-server
+cmake-lint
+eslint-language-server
+ltex-ls
+lua-language-server
+luacheck
+marksman
+nodejs-emmet-ls
+prosemd-lsp
+pyright
+python-lsp-server
+rust-analyzer
+shellcheck
+tailwindcss-language-server
+texlab
+typescript-language-server
+vscode-css-languageserver
+vscode-html-languageserver
+vscode-json-languageserver
+vscode-markdown-languageserver
+yaml-language-server
+
+# password manager
+pass
+pass-otp
+pass-update
+passff-host
+passff-host-librewolf
 
 # printer/scanner
 cups
@@ -115,51 +166,21 @@ hplip
 sane
 sane-openrc
 
-# programming tools
-bash-language-server
+# programming package managers
 cargo
-checkmake
-clang
-cmake-language-server
-cmake-lint
-codespell
-eslint-language-server
-gdb
-google-java-format
-jdtls
-ltex-ls-bin
+make
+python-pip
+
+# programming tools
 lua
 lua-jsregexp
-lua-language-server
-luacheck
-make
-marksman-bin
-nodejs-emmet-ls
-npm
-prettier
-prosemd-lsp
-pyright
-python-lsp-server
 python-pyflakes
 python-rope
-ruff
-rust
-rust-analyzer
-shellcheck
-shfmt
-stylua
-tailwindcss-language-server
-texlab
-texlive-basic
-typescript
-typescript-language-server
-vscode-css-languageserver
-vscode-html-languageserver
-vscode-json-languageserver
-vscode-markdown-languageserver
-yaml-language-server
 
 # text editor
 neovim
 nvim-lazy
-nvim-treesitter-parsers-git
+nvim-treesitter-parsers
+
+# wayland
+wl-clipboard

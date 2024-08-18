@@ -1,6 +1,13 @@
 #!/bin/sh
 
-gex i "clearurls" \
+set -e
+
+source "$(basename "$0")/header.sh"
+
+! program_exists "gex" && echo "gex is not installed! Installing..." && paru -S "gex-git"
+
+gex i -b "librewolf"\
+	"clearurls" \
 	"cookie-autodelete" \
 	"darkreader" \
 	"decentraleyes" \
@@ -18,5 +25,4 @@ gex i "clearurls" \
 	"ublock-origin" \
 	"vimium-ff" \
 	"volume-control-boost-volume" \
-	"youtube-nonstop" \
-	-b "librewolf"
+	"youtube-nonstop"

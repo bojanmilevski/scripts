@@ -13,19 +13,9 @@
 
 set -e
 
-umask 0022
+source "$(basename "$0")/header.sh"
 
-# colors
-BLACK="\033[0;30m"
-BLUE="\033[0;34m"
-BOLD="\033[1m"
-CYAN="\033[0;36m"
-GREEN="\033[0;32m"
-PURPLE="\033[0;35m"
-RED="\033[0;31m"
-RESET="\033[0m"
-WHITE="\033[0;37m"
-YELLOW="\033[0;33m"
+umask 0022
 
 domain=""
 user_name=""
@@ -35,8 +25,8 @@ user_name=""
 
 subdom="mail"
 maildomain="$subdom.$domain"
-certdir="/etc/letsencrypt/live/$maildomain"
 
+certdir="/etc/letsencrypt/live/$maildomain"
 postfix_dir="/var/spool/postfix"
 
 message() {
