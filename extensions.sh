@@ -6,7 +6,7 @@ source "$(basename "$0")/header.sh"
 
 ! program_exists "gex" && echo "gex is not installed! Installing..." && paru -S "gex-git"
 
-gex i -b "librewolf"\
+gex i -b "librewolf" \
 	"clearurls" \
 	"cookie-autodelete" \
 	"darkreader" \

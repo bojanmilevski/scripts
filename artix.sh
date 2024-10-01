@@ -6,7 +6,7 @@ source "$(basename "$0")/header.sh"
 
 DISK=""
 [ -z "$DISK" ] && error "Need to specify disk!"
-[ ! -d "$DISK" ] && error "$1 does not exist!"
+[ ! -d "$DISK" ] && error "$DISK does not exist!"
 
 BOOT_PART_SIZE=""
 [ -z "$BOOT_PART_SIZE" ] && error "Need to specify boot partition size (in MB)!"
@@ -62,8 +62,9 @@ mount --mkdir=0755 "${DISK}1" "/mnt/boot"
 btrfs property set "/mnt" compression "zstd"
 
 # installing system
-basestrap "/mnt" base base-devel openrc elogind elogind-openrc linux linux-firmware lvm2 lvm2-openrc cryptsetup grub \
-	efibootmgr os-prober networkmanager networkmanager-openrc
+basestrap "/mnt" base base-devel openrc elogind elogind-openrc linux-hardened \
+	linux-firmware lvm2 lvm2-openrc cryptsetup grub efibootmgr os-prober \
+	networkmanager networkmanager-openrc
 
 # fstab
 fstabgen -U "/mnt" | sed 's/\s\+/ /g' >"/mnt/etc/fstab"

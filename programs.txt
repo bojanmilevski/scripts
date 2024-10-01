@@ -1,5 +1,9 @@
 # audio
+pipewire
+pipewire-jack
+pipewire-pulse
 scarlett2
+wireplumber
 
 # artix
 artix-archlinux-support
@@ -8,7 +12,6 @@ downgrade
 paru
 
 # bootloader
-artix-grub-theme
 efibootmgr
 grub
 os-prober
@@ -38,9 +41,7 @@ fd
 git
 glow
 jq
-libvirt
-libvirt-openrc
-linux
+linux-hardened
 linux-firmware
 lsd
 lvm2
@@ -53,12 +54,9 @@ networkmanager-openrc
 ntfs-3g
 opendoas
 openrc
-pipewire-autostart
-pipewire-pulse
 playerctl
 procs
 progress
-qemu-base
 ripgrep
 tldr
 topgrade
@@ -68,7 +66,6 @@ unzip
 virt-manager
 wget
 which
-wireplumber
 xdg-ninja
 yt-dlp
 zbar
@@ -77,6 +74,7 @@ zoxide
 
 # compilers/interpreters
 clang
+lua
 npm
 python
 rust
@@ -124,18 +122,22 @@ gwenview
 kcalc
 ksshaskpass
 kwalletmanager
+kwin-scripts-krohnkite-git
 plasma
 skanlite
 xdg-desktop-portal
 
-# lsp
+# linters
+cmake-lint
+luacheck
+yamllint
+
+# lsps
 bash-language-server
 cmake-language-server
-cmake-lint
 eslint-language-server
 ltex-ls
 lua-language-server
-luacheck
 marksman
 nodejs-emmet-ls
 prosemd-lsp
@@ -170,9 +172,9 @@ sane-openrc
 cargo
 make
 python-pip
+vcpkg
 
 # programming tools
-lua
 lua-jsregexp
 python-pyflakes
 python-rope
@@ -181,6 +183,14 @@ python-rope
 neovim
 nvim-lazy
 nvim-treesitter-parsers
+
+# virtual machine
+bridge-utils
+dnsmasq
+libvirt
+libvirt-openrc
+qemu-base
+virt-manager
 
 # wayland
 wl-clipboard
