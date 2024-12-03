@@ -1,8 +1,10 @@
+# ai
+ollama
+
 # audio
 pipewire
 pipewire-jack
 pipewire-pulse
-scarlett2
 wireplumber
 
 # artix
@@ -23,7 +25,6 @@ fish
 
 # cli
 android-tools
-bat
 bluez
 bluez-openrc
 btop
@@ -37,12 +38,11 @@ dust
 elogind
 elogind-openrc
 fastfetch
-fd
 git
 glow
 jq
-linux-hardened
 linux-firmware
+linux-hardened
 lsd
 lvm2
 lvm2-openrc
@@ -54,32 +54,38 @@ networkmanager-openrc
 ntfs-3g
 opendoas
 openrc
+p7zip
 playerctl
 procs
 progress
-ripgrep
 tldr
 topgrade
 trashy
 tree
 unzip
-virt-manager
 wget
 which
 xdg-ninja
 yt-dlp
 zbar
 zip
-zoxide
 
 # compilers/interpreters
 clang
+gcc
+ghc
 lua
 npm
 python
 rust
 texlive-basic
 typescript
+
+# coreutils alternatives
+bat
+fd
+ripgrep
+zoxide
 
 # debuggers
 gdb
@@ -95,19 +101,22 @@ ttf-material-design-icons
 # formatters
 checkmake
 codespell
+haskell-fourmolu
 prettier
 ruff
 shfmt
 stylua
 
+# gaming
+steam
+
 # gui
-alsa-scarlett-gui
 apple_cursor
+firefox
 gimp
 kdenlive
 kitty
 libreoffice-fresh
-librewolf
 mpv
 nextcloud-client
 obs-studio
@@ -127,6 +136,9 @@ plasma
 skanlite
 xdg-desktop-portal
 
+# libraries
+lua-jsregexp
+
 # linters
 cmake-lint
 luacheck
@@ -136,6 +148,7 @@ yamllint
 bash-language-server
 cmake-language-server
 eslint-language-server
+haskell-language-server
 ltex-ls
 lua-language-server
 marksman
@@ -159,7 +172,6 @@ pass
 pass-otp
 pass-update
 passff-host
-passff-host-librewolf
 
 # printer/scanner
 cups
@@ -169,15 +181,13 @@ sane
 sane-openrc
 
 # programming package managers
+cabal-install
 cargo
+luarocks
 make
+ninja
 python-pip
 vcpkg
-
-# programming tools
-lua-jsregexp
-python-pyflakes
-python-rope
 
 # text editor
 neovim
