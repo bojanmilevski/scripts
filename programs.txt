@@ -24,6 +24,7 @@ dashbinsh
 fish
 
 # cli
+7zip
 android-tools
 bluez
 bluez-openrc
@@ -54,7 +55,6 @@ networkmanager-openrc
 ntfs-3g
 opendoas
 openrc
-p7zip
 playerctl
 procs
 progress
@@ -66,6 +66,7 @@ unzip
 wget
 which
 xdg-ninja
+yazi
 yt-dlp
 zbar
 zip
@@ -73,7 +74,6 @@ zip
 # compilers/interpreters
 clang
 gcc
-ghc
 lua
 npm
 python
@@ -101,7 +101,6 @@ ttf-material-design-icons
 # formatters
 checkmake
 codespell
-haskell-fourmolu
 prettier
 ruff
 shfmt
@@ -109,10 +108,12 @@ stylua
 
 # gaming
 steam
+protonup-qt
 
 # gui
 apple_cursor
 firefox
+librewolf
 gimp
 kdenlive
 kitty
@@ -129,6 +130,7 @@ ark
 dolphin
 gwenview
 kcalc
+kdeconnect
 ksshaskpass
 kwalletmanager
 kwin-scripts-krohnkite-git
@@ -148,7 +150,6 @@ yamllint
 bash-language-server
 cmake-language-server
 eslint-language-server
-haskell-language-server
 ltex-ls
 lua-language-server
 marksman
@@ -168,10 +169,7 @@ vscode-markdown-languageserver
 yaml-language-server
 
 # password manager
-pass
-pass-otp
-pass-update
-passff-host
+rbw
 
 # printer/scanner
 cups
@@ -181,7 +179,6 @@ sane
 sane-openrc
 
 # programming package managers
-cabal-install
 cargo
 luarocks
 make

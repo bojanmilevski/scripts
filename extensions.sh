@@ -6,7 +6,8 @@ source "$(basename "$0")/header.sh"
 
 ! program_exists "gex" && echo "gex is not installed! Installing..." && paru -S "gex-git"
 
-gex i -b "librewolf" \
+gex i -b \
+	"bitwarden-password-manager" \
 	"clearurls" \
 	"cookie-autodelete" \
 	"darkreader" \
@@ -16,6 +17,7 @@ gex i -b "librewolf" \
 	"facebook-container" \
 	"google-container" \
 	"istilldontcareaboutcookies" \
+	"librewolf" \
 	"passff" \
 	"privacy-badger17" \
 	"return-youtube-dislikes" \
