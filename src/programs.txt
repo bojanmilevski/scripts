@@ -4,8 +4,11 @@ ollama
 # audio
 pipewire
 pipewire-jack
+pipewire-openrc
 pipewire-pulse
+pipewire-pulse-openrc
 wireplumber
+wireplumber-openrc
 
 # artix
 artix-archlinux-support
@@ -34,17 +37,13 @@ cronie
 cronie-openrc
 cryptsetup
 dos2unix
-duf
-dust
 elogind
 elogind-openrc
 fastfetch
-git
 glow
 jq
 linux-firmware
 linux-hardened
-lsd
 lvm2
 lvm2-openrc
 man-db
@@ -53,6 +52,8 @@ mpv-mpris
 mpv-thumbnail-script
 networkmanager-openrc
 ntfs-3g
+ntp
+ntp-openrc
 opendoas
 openrc
 playerctl
@@ -60,7 +61,6 @@ procs
 progress
 tldr
 topgrade
-trashy
 tree
 unzip
 wget
@@ -71,20 +71,24 @@ yt-dlp
 zbar
 zip
 
-# compilers/interpreters
+# compilers/interpreters/runtimes
 clang
 gcc
 lua
-npm
+nodejs
 python
 rust
-texlive-basic
-typescript
 
 # coreutils alternatives
+atuin
 bat
+duf
+dust
+exa
 fd
+lsd
 ripgrep
+trashy
 zoxide
 
 # debuggers
@@ -98,32 +102,25 @@ ttf-macedonian-ancient
 ttf-macedonian-church
 ttf-material-design-icons
 
-# formatters
-checkmake
-codespell
-prettier
-ruff
-shfmt
-stylua
-
 # gaming
 steam
 protonup-qt
 
 # gui
+alsa-scarlett-gui
 apple_cursor
-firefox
-librewolf
 gimp
 kdenlive
 kitty
 libreoffice-fresh
+librewolf-bin
 mpv
 nextcloud-client
 obs-studio
 qbittorrent
 spotify
 thunderbird
+zen-browser-bin
 
 # kde
 ark
@@ -135,38 +132,22 @@ ksshaskpass
 kwalletmanager
 kwin-scripts-krohnkite-git
 plasma
+sddm
+sddm-openrc
 skanlite
-xdg-desktop-portal
 
 # libraries
 lua-jsregexp
 
-# linters
-cmake-lint
-luacheck
-yamllint
-
-# lsps
-bash-language-server
-cmake-language-server
-eslint-language-server
-ltex-ls
-lua-language-server
-marksman
-nodejs-emmet-ls
-prosemd-lsp
-pyright
-python-lsp-server
-rust-analyzer
-shellcheck
-tailwindcss-language-server
-texlab
-typescript-language-server
-vscode-css-languageserver
-vscode-html-languageserver
-vscode-json-languageserver
-vscode-markdown-languageserver
-yaml-language-server
+# package managers
+cargo
+luarocks
+make
+ninja
+pnpm
+python-pip
+python-poetry
+vcpkg
 
 # password manager
 rbw
@@ -178,18 +159,11 @@ hplip
 sane
 sane-openrc
 
-# programming package managers
-cargo
-luarocks
-make
-ninja
-python-pip
-vcpkg
-
 # text editor
 neovim
-nvim-lazy
-nvim-treesitter-parsers
+
+# vcs
+git
 
 # virtual machine
 bridge-utils
@@ -201,3 +175,4 @@ virt-manager
 
 # wayland
 wl-clipboard
+xdg-desktop-portal

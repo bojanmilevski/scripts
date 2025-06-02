@@ -1,13 +1,14 @@
 #!/bin/sh
 
-set -e
+set -ex
 
-DIR="$(dirname "$0")"
-source "$DIR/header.sh"
+. "./utils.sh"
 
-! program_exists "paru" && echo "paru is not installed. Installing ..." && "$DIR/paru.sh"
+fail_if_root
 
-PROGRAMS_FILE="$DIR/programs.txt"
+! program_exists "paru" && echo "paru is not installed. Installing ..." && ./paru.sh
+
+PROGRAMS_FILE="./programs.txt"
 
 [ ! -e "$PROGRAMS_FILE" ] && echo "File with programs list does not exist!" && exit 1
 [ -z "$PROGRAMS_FILE" ] && echo "File with programs list is empty!" && exit 1

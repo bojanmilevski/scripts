@@ -1,8 +1,8 @@
 #!/bin/sh
 
-set -e
+set -ex
 
-source "$(dirname "$0")/header.sh"
+. "./utils.sh"
 
 fail_if_root
 
